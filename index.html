@@ -29,7 +29,10 @@
   --mono: 'JetBrains Mono', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 90px; /* Forces browsers to respect your navbar height */
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -442,7 +445,7 @@ svg{display:block;}
 
 <!-- ══════════════════ NAV ══════════════════ -->
 <nav id="navbar">
-  <a href="#home" class="nav-logo">SM<span>.</span></a>
+  <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="nav-logo">SM<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -452,18 +455,18 @@ svg{display:block;}
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://drive.google.com/file/d/1OXurs1KtByjoIQF7mkg885u_ELGaHLaR/view" target="_blank" class="nav-resume">Resume ↗</a>
+  <a href="https://drive.google.com/file/d/1rLjrD69zjHcr07iebSGOSzv0S0ID6C9j/view?usp=sharing" target="_blank" class="nav-resume">Resume ↗</a>
   <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
 </nav>
 <nav class="mobile-nav" id="mobile-nav">
-  <a href="#home" onclick="closeMobile()">Home</a>
-  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
   <a href="https://github.com/subham-28" target="_blank">GitHub ↗</a>
-  <a href="#projects" onclick="closeMobile()">Projects</a>
-  <a href="#publications" onclick="closeMobile()">Publications</a>
-  <a href="#achievements" onclick="closeMobile()">Achievements</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="https://drive.google.com/file/d/1OXurs1KtByjoIQF7mkg885u_ELGaHLaR/view" target="_blank" style="color:var(--cyan)">Resume ↗</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#contact">Contact</a>
+  <a href="https://drive.google.com/file/d/1rLjrD69zjHcr07iebSGOSzv0S0ID6C9j/view?usp=sharing" target="_blank" style="color:var(--cyan)">Resume ↗</a>
 </nav>
 
 <!-- ══════════════════ HERO ══════════════════ -->
@@ -472,8 +475,8 @@ svg{display:block;}
   <div class="hero-content">
     <div class="hero-badge">CSE Undergraduate · IIIT Bhubaneswar</div>
     <h1 class="hero-name">Subham Mohanty</h1>
-    <p class="hero-tagline">Machine Learning &amp; Deep Learning Researcher</p>
-    <p class="hero-sub"> Transforming data into intelligent systems and predictive models</p>
+    <p class="hero-tagline">AI Engineer &amp; Machine Learning Researcher</p>
+    <p class="hero-sub">Architecting autonomous multi-agent systems, physics-informed neural networks, and scalable AI pipelines.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">Explore My Work →</a>
       <a href="#contact" class="btn-ghost">Contact Me</a>
@@ -496,12 +499,12 @@ svg{display:block;}
         <div class="about-card">
           <div class="about-avatar">SM</div>
           <h3>Subham Mohanty</h3>
-          <p class="subtitle">ML / DL RESEARCHER · CSE UNDERGRAD</p>
-          <p>I am a third-year Computer Science and Engineering undergraduate at IIIT Bhubaneswar with a strong focus on Machine Learning and Deep Learning. My academic journey is driven by a deep curiosity for computational modeling and predictive analytics. I am particularly interested in exploring the intersections of theoretical AI and practical, scalable applications. My current research interests lie in developing robust forecasting models, advancing complex neural network architectures like Graph Neural Networks, and exploring privacy-preserving frameworks such as federated learning. I am passionate about leveraging data-driven approaches to solve complex, interdisciplinary challenges.</p>
+          <p class="subtitle">AI/ML ENGINEER & RESEARCHER · CSE UNDERGRAD</p>
+          <p>I am a Computer Science undergraduate at IIIT Bhubaneswar driven by a deep curiosity for computational modeling and intelligent systems. My research spans both classical deep learning and modern Generative AI. I am particularly interested in exploring the intersections of theoretical AI and practical deployment—from advancing complex architectures like hybrid LSTM-PINN models, to orchestrating Agentic AI systems capable of autonomous literature synthesis. I am passionate about leveraging large language models, graph-based orchestration, and predictive analytics to solve complex, interdisciplinary challenges.</p>
           <!-- <p style="margin-top:12px;">Proficient in Python, C++, Scikit-learn, and Keras, with a keen interest in advancing computational modeling and predictive analytics.</p> -->
           <div class="stat-grid">
-            <div class="stat-box"><div class="num">9.14</div><div class="lbl">CGPA / 10</div></div>
-            <div class="stat-box"><div class="num">7+</div><div class="lbl">Projects</div></div>
+            <div class="stat-box"><div class="num">9.09</div><div class="lbl">CGPA / 10</div></div>
+            <div class="stat-box"><div class="num">9+</div><div class="lbl">Projects</div></div>
             <div class="stat-box"><div class="num">AIR 366</div><div class="lbl">GATE CS 2026</div></div>
             <div class="stat-box"><div class="num">1</div><div class="lbl">Research Paper</div></div>
           </div>
@@ -512,7 +515,7 @@ svg{display:block;}
             <h5>International Institute of Information Technology, Bhubaneswar</h5>
             <p>B.Tech in Computer Science and Engineering</p>
             <p>July 2023 – Present</p>
-            <div class="edu-cgpa">CGPA: 9.14 / 10</div>
+            <div class="edu-cgpa">CGPA: 9.09 / 10</div>
           </div>
         </div>
       </div>
@@ -526,50 +529,69 @@ svg{display:block;}
             </div>
             <div class="profile-name-tag">
               Subham Mohanty
-              <span>Researcher Identity Verified</span>
+              <span>AI ENGINEER</span>
             </div>
           </div>
 
         <div class="skills-section">
-          <h4>Technical Skills</h4>
-          <div class="skill-group">
-            <div class="skill-group-name">Languages</div>
-            <div class="tags">
-              <span class="tag cyan">Python</span><span class="tag cyan">C++</span><span class="tag">C</span><span class="tag">SQL</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">ML / DL Frameworks</div>
-            <div class="tags">
-              <span class="tag cyan">TensorFlow</span><span class="tag cyan">Keras</span><span class="tag cyan">Scikit-learn</span>
-              <span class="tag violet">XGBoost</span><span class="tag violet">LightGBM</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Libraries</div>
-            <div class="tags">
-              <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">SciPy</span>
-              <span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Tools & Deployment</div>
-            <div class="tags">
-              <span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">React</span>
-              <span class="tag">MLflow</span><span class="tag">Docker</span><span class="tag">Git</span>
-              <span class="tag">Google Cloud</span><span class="tag">OSMnx</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Specializations</div>
-            <div class="tags">
-              <span class="tag cyan">Federated Learning</span>
-              <span class="tag cyan">Geospatial ML</span>
-              <span class="tag violet">Physics-Informed NN</span>
-              <span class="tag violet">NLP &amp; Vision</span>
-            </div>
-          </div>
-        </div>
+  <h4>Technical Skills</h4>
+  
+  <div class="skill-group">
+    <div class="skill-group-name">Languages</div>
+    <div class="tags">
+      <span class="tag cyan">Python</span><span class="tag cyan">C++</span><span class="tag">C</span><span class="tag">SQL</span>
+    </div>
+  </div>
+  
+  <div class="skill-group">
+    <div class="skill-group-name">ML &amp; DL</div>
+    <div class="tags">
+      <span class="tag cyan">TensorFlow</span><span class="tag cyan">Keras</span><span class="tag cyan">Scikit-learn</span>
+      <span class="tag violet">XGBoost</span><span class="tag violet">Random Forest</span>
+      <span class="tag">CNN</span><span class="tag">RNN</span><span class="tag">LSTM</span><span class="tag">Transformers</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-name">GenAI &amp; Agentic AI</div>
+    <div class="tags">
+      <span class="tag cyan">LangChain</span><span class="tag cyan">LangGraph</span><span class="tag cyan">Agentic AI</span>
+      <span class="tag violet">Multi-Agent Systems</span><span class="tag violet">HITL</span><span class="tag violet">RAG</span>
+      <span class="tag">FAISS</span><span class="tag">Vector Stores</span><span class="tag">Retrievers</span>
+      <span class="tag">Hugging Face</span><span class="tag">Prompt Engineering</span><span class="tag">LLM Apps</span>
+    </div>
+  </div>
+  
+  <div class="skill-group">
+    <div class="skill-group-name">Visualization</div>
+    <div class="tags">
+      <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">SciPy</span>
+      <span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span>
+    </div>
+  </div>
+  
+  <div class="skill-group">
+    <div class="skill-group-name">Tools &amp; Deployment</div>
+    <div class="tags">
+      <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span>
+      <span class="tag">Linux</span><span class="tag">Streamlit</span><span class="tag">FastAPI</span>
+      <span class="tag">Google Cloud</span><span class="tag cyan">Pydantic</span><span class="tag cyan">LangSmith</span>
+      <span class="tag violet">OpenRouter API</span><span class="tag violet">SQLite</span>
+    </div>
+  </div>
+</div>
+
+        <div class="skill-group">
+    <div class="skill-group-name">Specializations</div>
+    <div class="tags">
+      <span class="tag cyan">Multi-Agent Systems</span>
+      <span class="tag cyan">Federated Learning</span>
+      <span class="tag cyan">Geospatial ML</span>
+      <span class="tag violet">Physics-Informed NN</span>
+      <span class="tag violet">NLP &amp; Vision</span>
+    </div>
+  </div>
+        
     </div>
   </div>
 </section>
@@ -582,8 +604,62 @@ svg{display:block;}
     <div class="section-line reveal delay-2"></div>
     <div class="projects-grid">
 
-      <!-- P1: PINN -->
-      <div class="project-card p1 reveal delay-1">
+      <!-- P0: ResearchGPT (NEW FLAGSHIP PROJECT) -->
+      <div class="project-card p3 reveal delay-1">
+        <div class="project-img">
+          <img src="images/researchgpt.png" alt="ResearchGPT" class="card-cover-img" onerror="this.style.display='none'">
+          <div class="project-neural" id="pn_res"></div>
+          <span class="project-img-label">AGENTIC AI · LANGGRAPH · RAG</span>
+        </div>
+        <div class="project-body">
+          <h3>ResearchGPT: Autonomous Research Agent</h3>
+          <p>An autonomous research agent that retrieves, evaluates, and synthesizes research papers from ArXiv and Semantic Scholar through a self-correcting RAG workflow.</p>
+          <div class="project-outcome">↳ Critic node validation · Human-in-the-loop approval · Session memory</div>
+          <div class="project-tech">
+            <span>LangGraph</span><span>LangChain</span><span>OpenRouter API</span><span>Streamlit</span><span>Pydantic</span><span>RAG</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/subham-28/Autonomous-Research-Agent" target="_blank" class="project-btn source">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Source Code
+            </a>
+            <a href="https://research-gpt-05.streamlit.app/" target="_blank" class="project-btn live">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Website
+      </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- P1: Air-Aware -->
+      <div class="project-card p1 reveal delay-2">
+        <div class="project-img">
+          <img src="images/air-aware.png" alt="Air-Aware GenAI" class="card-cover-img" onerror="this.style.display='none'">
+          <div class="project-neural" id="pn_air"></div>
+          <span class="project-img-label">GENAI · RAG · API INTEGRATION</span>
+        </div>
+        <div class="project-body">
+          <h3>Air-Aware: GenAI-Powered Air Quality Assistant</h3>
+          <p>An end-to-end GenAI application that generates personalized outdoor activity recommendations by synthesizing live Open-Meteo API data with a LangChain-driven RAG pipeline.</p>
+          <div class="project-outcome">↳ Grounded safety explanations using FAISS over WHO/CPCB guidelines</div>
+          <div class="project-tech">
+            <span>LangChain</span><span>RAG</span><span>FAISS</span><span>Streamlit</span><span>HuggingFace</span><span>Open-Meteo API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/subham-28/GenAI-Air-Quality-Planner" target="_blank" class="project-btn source">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Source Code
+            </a>
+            <a href="https://genai-air-quality-planner.streamlit.app/" target="_blank" class="project-btn live">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Live Demo
+      </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- P2: PINN -->
+      <div class="project-card p2 reveal delay-3">
         <div class="project-img">
           <img src="images/pinn.png" alt="PINN Project" class="card-cover-img">
           <div class="project-neural" id="pn1"></div>
@@ -609,8 +685,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P2: SafeYatra -->
-      <div class="project-card p2 reveal delay-2">
+      <!-- P3: SafeYatra -->
+      <div class="project-card p4 reveal delay-1">
         <div class="project-img">
           <img src="images/safe.png" alt="SafeYatra Project" class="card-cover-img">
           <span class="project-img-label">GEOSPATIAL · SAFETY · ML</span></div>
@@ -634,8 +710,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P3: Federated Learning -->
-      <div class="project-card p3 reveal delay-3">
+      <!-- P4: Federated Learning -->
+      <div class="project-card p5 reveal delay-2">
         <div class="project-img">
           <img src="images/fede.png" alt="Federated Learning" class="card-cover-img">
           <span class="project-img-label">PRIVACY · FEDERATED · ML</span></div>
@@ -659,8 +735,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P4: Gramify -->
-      <div class="project-card p4 reveal delay-4">
+      <!-- P5: Gramify -->
+      <div class="project-card p6 reveal delay-3">
         <div class="project-img">
           <img src="images/gramify.png" alt="Gramify Project" class="card-cover-img">
           <span class="project-img-label">NLP · VISION · FULL-STACK</span></div>
@@ -684,8 +760,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P5: Food Delivery -->
-      <div class="project-card p5 reveal delay-5">
+      <!-- P6: Food Delivery -->
+      <div class="project-card p7 reveal delay-1">
         <div class="project-img">
           <img src="images/food.png" alt="Food Delivery Project" class="card-cover-img">
           <span class="project-img-label">ML · STACKING · MLOPS</span></div>
@@ -709,8 +785,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P6: T20 Cricket -->
-      <div class="project-card p6 reveal delay-3">
+      <!-- P7: T20 Cricket -->
+      <div class="project-card p1 reveal delay-2">
         <div class="project-img">
           <img src="images/cric.png" alt="Cricket Project" class="card-cover-img">          
           <span class="project-img-label">SPORTS ANALYTICS · ML</span></div>
@@ -734,8 +810,8 @@ svg{display:block;}
         </div>
       </div>
 
-      <!-- P7: Plant Disease -->
-      <div class="project-card p7 reveal delay-4">
+      <!-- P8: Plant Disease -->
+      <div class="project-card p2 reveal delay-3">
         <div class="project-img">
           <img src="images/plant.png" alt="Plant Project" class="card-cover-img">
           <span class="project-img-label">COMPUTER VISION · CNN</span></div>
@@ -770,7 +846,7 @@ svg{display:block;}
     <h2 class="section-title reveal delay-1">Publications</h2>
     <div class="section-line reveal delay-2"></div>
     <div class="pub-card reveal delay-3">
-      <div class="pub-badge">📄 IEEE · IC-ICNS 2026 · ACCEPTED</div>
+      <div class="pub-badge">📄 IEEE · IC-ICNS 2026 · PUBLISHED</div>
       <h3 class="pub-title">Predicting Startup Success: A Machine Learning Framework Integrating Technology, Founder Psychology, Mentorship, and Sustainability</h3>
       <div class="pub-meta">
         <div class="pub-meta-row">
@@ -783,7 +859,16 @@ svg{display:block;}
         </div>
         <div class="pub-meta-row">
           <span class="key">Status</span>
-          <span class="val" style="color:#4ade80">✓ Accepted for Publication</span>
+          <span class="val" style="color:#4ade80">✓ Published</span>
+        </div>
+        <div class="pub-meta-row" style="margin-top: 8px;">
+          <span class="key">Link</span>
+          <span class="val">
+            <a href="https://ieeexplore.ieee.org/document/11537872" target="_blank" style="color:var(--cyan); text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:6px; border-bottom: 1px solid transparent; transition: border-color 0.2s;">
+              Read Paper 
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -797,34 +882,63 @@ svg{display:block;}
     <h2 class="section-title reveal delay-1">Achievements</h2>
     <div class="section-line reveal delay-2"></div>
     <div class="ach-grid">
+      
+      <!-- Achievement 1: GATE -->
       <div class="ach-card reveal delay-1">
-        <span class="ach-emoji">🎯</span>
+        <div style="height: 32px; margin-bottom: 14px; display: flex; align-items: center;">
+          <!-- Guaranteed working Icons8 Exam/Target Icon -->
+          <img src="https://img.icons8.com/color/48/exam.png" alt="GATE Exam" style="height: 32px; width: 32px;">
+        </div>
         <div class="ach-badge">AIR 366</div>
         <h4>GATE Computer Science 2026</h4>
         <p>Achieved All India Rank 366 with a score of 799 out of 1000 in GATE Computer Science 2026.</p>
       </div>
+      
+      <!-- Achievement 2: Google -->
       <div class="ach-card reveal delay-2">
-        <span class="ach-emoji">🌍</span>
+        <div style="height: 32px; margin-bottom: 14px; display: flex; align-items: center;">
+          <!-- Reliable Google Logo -->
+          <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Logo" style="height: 32px; width: 32px;">
+        </div>
         <div class="ach-badge">TOP 105 GLOBALLY</div>
         <h4>Google Solution Challenge 2025</h4>
         <p>Ranked Top 105 globally among 3,700+ projects and 64,000+ participants for Gramify — an AI precision baking app.</p>
       </div>
+      
+      <!-- Achievement 3: Amazon -->
       <div class="ach-card reveal delay-3">
-        <span class="ach-emoji">🚀</span>
+        <div style="height: 32px; margin-bottom: 14px; display: flex; align-items: center;">
+          <!-- Reliable Amazon Logo -->
+          <img src="https://img.icons8.com/color/48/amazon.png" alt="Amazon Logo" style="height: 32px; width: 32px;">
+        </div>
         <div class="ach-badge">SELECTED</div>
         <h4>Amazon ML Summer School 2025</h4>
         <p>Selected among top students across India for advanced ML concepts, industry practices, and hands-on mentorship with Amazon scientists.</p>
       </div>
+      
+     <!-- Achievement 4: Flipkart -->
       <div class="ach-card reveal delay-4">
+        <div style="height: 32px; margin-bottom: 14px; display: flex; align-items: center;">
+          <!-- Using a dedicated developer logo CDN that allows embedding -->
+          <img src="https://cdn.worldvectorlogo.com/logos/flipkart.svg" alt="Flipkart" style="height: 28px; width: auto;">
+        </div>
+        <div class="ach-badge">SEMIFINALIST</div>
+        <h4>Flipkart GRiD 8.0 (Data Science Track)</h4>
+        <p>Recognized as a Semifinalist in the Data Science Track of India's flagship engineering campus challenge by Flipkart.</p>
+      </div>
+      
+      <!-- Achievement 5: Udbhav -->
+      <div class="ach-card reveal delay-5">
         <span class="ach-emoji">🏆</span>
         <div class="ach-badge">SEMIFINALIST</div>
         <h4>Udbhav Inter-IIIT Hackathon 2025</h4>
         <p>Semifinalist for SafeYatra — an AI-driven urban safety platform predicting street-level safety scores and optimizing secure routing.</p>
       </div>
+      
     </div>
   </div>
 </section>
-
+  
 <!-- ══════════════════ CONTACT ══════════════════ -->
 <section id="contact">
   <div class="container">
@@ -1076,6 +1190,41 @@ document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) scale3d(1,1,1)';
     card.style.transition = 'transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
+  });
+});
+
+// ══════════════════════════════════
+// SMART SMOOTH SCROLLING FOR ALL BUTTONS
+// ══════════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Ignore if it's just "#" (like your logo, which is handled separately)
+    if (targetId === '#' || targetId === '#home') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeMobile();
+      return;
+    }
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault(); // Stop the default jump and URL hash change
+      
+      // Get navbar height so the section title doesn't hide behind it
+      const navHeight = document.getElementById('navbar').offsetHeight;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20; // 20px extra breathing room
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if it's open
+      closeMobile();
+    }
   });
 });
 </script>
