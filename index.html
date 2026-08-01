@@ -183,6 +183,29 @@ section { position: relative; z-index: 1; padding: 100px 0; }
 .edu-card p { font-size: 13px; color: var(--text2); margin: 2px 0; }
 .edu-cgpa { font-family: var(--mono); font-size: 12px; color: var(--cyan); margin-top: 4px; }
 
+/* ─── EXPERIENCE ─── */
+#experience { background: var(--bg); }
+.exp-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 40px; margin-bottom: 24px; position: relative; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 900px; margin-left: auto; margin-right: auto;
+}
+.exp-card:hover { border-color: var(--border2); box-shadow: var(--glow); transform: translateY(-2px); }
+.exp-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: linear-gradient(to bottom, var(--cyan), var(--violet));
+}
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.exp-title-group h3 { font-family: var(--syne); font-size: 22px; font-weight: 700; color: var(--text); }
+.exp-company { font-family: var(--mono); font-size: 14px; color: var(--cyan); margin-top: 6px; letter-spacing: 0.5px; }
+.exp-date { font-family: var(--mono); font-size: 12px; color: var(--text3); background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); }
+.exp-bullets { list-style: none; margin-bottom: 24px; }
+.exp-bullets li { position: relative; padding-left: 24px; font-size: 14.5px; color: var(--text2); margin-bottom: 12px; line-height: 1.7; }
+.exp-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--cyan); font-size: 18px; line-height: 1.4; }
+.exp-tech { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+@media(max-width: 600px) { .exp-card { padding: 24px; } }
+
 /* ─── PROJECTS ─── */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
 .project-card {
@@ -451,6 +474,7 @@ svg{display:block;}
   <ul class="nav-links">
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="https://github.com/subham-28" target="_blank">GitHub</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -463,6 +487,7 @@ svg{display:block;}
 <nav class="mobile-nav" id="mobile-nav">
   <a href="#home">Home</a>
   <a href="#about">About</a>
+  <a href="#experience">Experience</a>
   <a href="https://github.com/subham-28" target="_blank">GitHub ↗</a>
   <a href="#projects">Projects</a>
   <a href="#publications">Publications</a>
@@ -595,6 +620,36 @@ svg{display:block;}
   </div>
         
     </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ EXPERIENCE ══════════════════ -->
+<section id="experience">
+  <div class="container">
+    <span class="section-label reveal">Career</span>
+    <h2 class="section-title reveal delay-1">Experience</h2>
+    <div class="section-line reveal delay-2"></div>
+    
+    <div class="exp-card reveal delay-3">
+      <div class="exp-header">
+        <div class="exp-title-group">
+          <h3>Research Intern</h3>
+          <p class="exp-company">Indian Institute of Technology (IIT) Tirupati</p>
+        </div>
+        <div class="exp-date">May 2026 – July 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Spearheading EHR (Electronic Health Record) transcription and benchmarking initiatives for advanced medical document and prescription understanding tasks.</li>
+        <li>Exploring and implementing OCR, Transformer OCR, document understanding, and multimodal GenAI architectures for precise medical text extraction.</li>
+        <li>Benchmarking baseline models including Tesseract, EasyOCR, TrOCR, and <strong>Origami-Net</strong> alongside hybrid OCR pipelines, evaluating performance across CER, WER, medicine recall, dosage recall, and frequency recall metrics.</li>
+        <li>Preparing comprehensive technical reports detailing datasets, methodologies, evaluation protocols, scope, and limitations of modern EHR transcription systems.</li>
+      </ul>
+      <div class="exp-tech">
+        <span class="tag cyan">Origami-Net</span><span class="tag cyan">Transformer OCR</span><span class="tag violet">Multimodal GenAI</span><span class="tag">TrOCR</span><span class="tag">Python</span>
+      </div>
+    </div>
+    
   </div>
 </section>
 
@@ -1151,7 +1206,7 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
   // Active nav
-  const sections = ['home','about','projects','publications','achievements','contact'];
+  const sections = ['home','about','experience','projects','publications','achievements','contact'];
   const links = document.querySelectorAll('.nav-links a');
   let current = '';
   sections.forEach(id => {
