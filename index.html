@@ -409,9 +409,10 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 80% 30%; /* Pulls the focus to the right side and slightly up */
   display: block;
-  transform: scale(1.3); /* Adjust this value (1.1 to 2.0) to zoom more or less */
-  transform-origin: center center; /* Set to 'top center' if your head is getting cut off */
+  transform: scale(1.4); /* Slightly increased scale to frame the face better */
+  transform-origin: 80% 30%; /* Ensures the zoom happens centered on your face */
 }
 .profile-name-tag {
   margin-top: 16px;
